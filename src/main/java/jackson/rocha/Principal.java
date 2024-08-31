@@ -1,17 +1,30 @@
 package jackson.rocha;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Principal {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Cardapio cardapio = new Cardapio();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        ItemCardapio item1 = new ItemCardapio();
+        item1.descricao = "Rib Eye 500g";
+        item1.preco = 95;
+
+        ItemCardapio item2 = new ItemCardapio();
+        item2.descricao = "Picanha 400g";
+        item2.preco = 102.5;
+
+        ItemCardapio item3 = new ItemCardapio();
+        item3.descricao = "Batata frita 300g";
+        item3.preco = 12;
+
+        cardapio.adicionarItem(item1);
+        cardapio.adicionarItem(item2);
+        cardapio.adicionarItem(item3);
+
+        cardapio.imprimirItensCardapio(80, 150);
+
+        cardapio.removerItem(0);
+        System.out.println("---");
+
+        cardapio.imprimirItensCardapio(0, 150);
     }
 }
